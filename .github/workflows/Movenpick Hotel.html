@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movenpick Hotel | Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        
+        header {
+            background-color: #2c5f7d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #1a3c52;
+            padding: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: #2c5f7d;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            min-height: 60vh;
+        }
+        
+        h2 {
+            color: #2c5f7d;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .room, .restaurant, .amenity {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #2c5f7d;
+        }
+        
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        footer {
+            background-color: #2c5f7d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-info {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        form {
+            max-width: 500px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        
+        button {
+            background-color: #2c5f7d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #1a3c52;
+        }
+        
+        .hero {
+            background-color: #e8f4fc;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+  
+    <header>
+        <h1>Movenpick Hotel</h1>
+        <p>Your perfect getaway by the ocean</p>
+    </header>
+    
+   
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#dining">Dining</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main id="content">
+      
+        <div id="home-page" class="container">
+            <div class="hero">
+                <h2>Welcome to Movenpick Hotel</h2>
+                <p>Experience luxury and comfort with breathtaking ocean views.</p>
+                <p>Book your stay today and enjoy our special offers!</p>
+            </div>
+            
+            <h2>About Our Hotel</h2>
+            <p>Movenpick Hotel offers the perfect blend of modern comfort and seaside charm. Located right on the beach, we provide an unforgettable experience for all our guests.</p>
+            
+            <h2>Special Offers</h2>
+            <p>• Book 3 nights, get 1 night free.</p>
+            <p>• Weekend getaway package available.</p>
+            <p>• Honeymoon suite with complimentary breakfast.</p>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button onclick="showPage('rooms')">View Our Rooms</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Movenpick Hotel | independence Avenue Accra</p>
+        <p>info@Movenpickhotel.com</p>
+        <p>&copy; 2025  Hotel. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Page content for each section
+        const pages = {
+            home: `
+                <div id="home-page" class="container">
+                    <div class="hero">
+                        <h2>Welcome to Movenpick Hotel</h2>
+                        <p>Experience luxury and comfort with breathtaking ocean views.</p>
+                        <p>Book your stay today and enjoy our special offers!</p>
+                    </div>
+                    
+                    <h2>About Our Hotel</h2>
+                    <p>Seaside Hotel offers the perfect blend of modern comfort and seaside charm. Located right on the beach, we provide an unforgettable experience for all our guests.</p>
+                    
+                    <h2>Special Offers</h2>
+                    <p>• Book 3 nights, get 1 night free</p>
+                    <p>• Weekend getaway package available</p>
+                    <p>• Honeymoon suite with complimentary breakfast</p>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="showPage('rooms')">View Our Rooms</button>
+                    </div>
+                </div>
+            `,
+            
+     rooms: `
+               <div class="container">
+                    <h2>Our Rooms & Suites</h2>
+                    <p>Choose from our selection of comfortable and well-appointed rooms.</p>
+                    
+                    <div class="room">
+                        <h3>Standard Room</h3>
+                        <p>Comfortable room with queen bed, sea view, and basic amenities.</p>
+                        <p class="price">$120 per night</p>
+                    </div>
+                    
+                    <div class="room">
+                        <h3>Deluxe Room</h3>
+                        <p>Spacious room with king bed, balcony, and premium amenities.</p>
+                        <p class="price">$180 per night</p>
+                    </div>
+                    
+                    <div class="room">
+                        <h3>Ocean Suite</h3>
+                        <p>Luxurious suite with separate living area and panoramic ocean view.</p>
+                        <p class="price">$280 per night</p>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button onclick="showPage('contact')">Book Now</button>
+                    </div>
+                </div>
+            `,
+            
+            dining: `
+                <div class="container">
+                    <h2>Dining Options</h2>
+                    <p>Enjoy delicious meals at our on-site restaurants.</p>
+                    
+                    <div class="restaurant">
+                        <h3>Movenpick View Restaurant</h3>
+                        <p>Fine dining with fresh seafood and international cuisine. Open for breakfast, lunch, and dinner.</p>
+                        <p><strong>Hours:</strong> 7:00 AM - 10:00 PM</p>
+                    </div>
+                    
+                    <div class="restaurant">
+                        <h3>Beachside Cafe</h3>
+                        <p>Casual dining with light meals, snacks, and beverages. Perfect for a quick bite by the beach.</p>
+                        <p><strong>Hours:</strong> 10:00 AM - 8:00 PM</p>
+                    </div>
+                    
+                    <div class="restaurant">
+                        <h3>Sunset Bar</h3>
+                        <p>Enjoy cocktails and appetizers while watching the sunset over the ocean.</p>
+                        <p><strong>Hours:</strong> 4:00 PM - 11:00 PM</p>
+                    </div>
+                </div>
+            `,
+            
+            amenities: `
+                <div class="container">
+                    <h2>Hotel Amenities</h2>
+                    <p>We offer a variety of amenities to make your stay enjoyable in this hotel.</p>
+                    
+                    <div class="amenity">
+                        <h3>Swimming Pool</h3>
+                        <p>Large outdoor pool with ocean view. Open from 8:00 AM to 8:00 PM.</p>
+                    </div>
+                    
+                    <div class="amenity">
+                        <h3>Spa & Wellness Center</h3>
+                        <p>Relax with our massage treatments, sauna, and steam room.</p>
+                    </div>
+                    
+                    <div class="amenity">
+                        <h3>Fitness Center</h3>
+                        <p>Modern gym equipment available 24/7 for hotel guests.</p>
+                    </div>
+                    
+                    <div class="amenity">
+                        <h3>Free Wi-Fi</h3>
+                        <p>High-speed internet access throughout the hotel.</p>
+                    </div>
+                    
+                    <div class="amenity">
+                        <h3>Beach Access</h3>
+                        <p>Direct access to private beach area with complimentary loungers.</p>
+                    </div>
+                </div>
+            `,
+            
+            contact: `
+                <div class="container">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with us for reservations or inquiries.</p>
+                    
+                    <div class="contact-info">
+                        <p><strong>Address:</strong> Independence Avenue,Accra, Ghana</p>
+                        <p><strong>Phone:</strong>0244087897</p>
+                        <p><strong>Email:</strong> info@Movenpickhotel.com</p>
+                        <p><strong>Front Desk:</strong> Open 24 hours</p>
+                    </div>
+                    
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            `
+        };
+        
+        // Function to show different pages
+        function showPage(pageName) {
+            // Update navigation highlighting
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                if (link.getAttribute('href') === `#${pageName}`) {
+                    link.style.backgroundColor = '#2c5f7d';
+                } else {
+                    link.style.backgroundColor = '';
+                }
+            });
+            
+            // Update page content
+            document.getElementById('content').innerHTML = pages[pageName];
+            
+            // Update page title
+            let title = "Movenpick Hotel";
+            if (pageName === 'rooms') title += " | Rooms";
+            else if (pageName === 'dining') title += " | Dining";
+            else if (pageName === 'amenities') title += " | Amenities";
+            else if (pageName === 'contact') title += " | Contact";
+            document.title = title;
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Set up navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('href').substring(1); // Remove # symbol
+                    showPage(page);
+                });
+            });
+            
+            // Handle form submission
+            document.addEventListener('submit', function(e) {
+                if (e.target && e.target.id === 'contactForm') {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will contact you soon.');
+                    e.target.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
